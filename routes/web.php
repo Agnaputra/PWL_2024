@@ -2,22 +2,35 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\WelcomeController;
+
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
+
+
+// Route::get('/greeting', function () {
+//     return view('blog.hello', ['name' => 'Agna Putra']);
+//     });
+
+// Route::get('/greeting', function () {
+//     return view('hello', ['name' => 'Agna']);
+//     });
+    
 // Menghubungkan Controller dengan Route
-use App\Http\Controllers\UserController;
+// use App\Http\Controllers\UserController;
 
-Route::get('/users', [UserController::class, 'index']);
+// Route::get('/users', [UserController::class, 'index']);
 
-use App\Http\Controllers\PhotoController;
+// use App\Http\Controllers\PhotoController;
 
-Route::resource('photos', PhotoController::class);
+// Route::resource('photos', PhotoController::class);
 
-Route::resource('photos', PhotoController::class)->only([
-    'index', 'show'
-]);
+// Route::resource('photos', PhotoController::class)->only([
+//     'index', 'show'
+// ]);
 
-Route::resource('photos', PhotoController::class)->except([
-    'create', 'store', 'update', 'destroy'
-]);
+// Route::resource('photos', PhotoController::class)->except([
+//     'create', 'store', 'update', 'destroy'
+// ]);
 
 
 
